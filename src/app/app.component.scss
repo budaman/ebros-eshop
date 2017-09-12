@@ -1,0 +1,52 @@
+@import "profile";
+
+$black-color: #001011;
+$green-color: #093A3E;
+$grey-color: #7C7C7C;
+$blue-color: #25c3da;
+$dark-blue: #514a9d;
+$light-blue: #26FFE6;
+$pink-color: #D84797;
+$white-color: #D2FDFF;
+
+
+.guitar-logo {
+  width:50vw;
+  height: 18vw;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  color: $white-color;
+}
+
+nav {
+  width: 100vw;
+  margin-top: 20px;
+  padding: 0;
+  margin: 0;
+  ul{
+    background-color: $black-color;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li{
+      padding: 10px 0;
+      a{
+        font-size:  0.9rem;
+        letter-spacing: 2px;
+        text-decoration: none;
+        color: $white-color;
+        width: 100px;
+        padding: 10px 16px;
+      }
+
+    }
+    li:hover {
+      background-color: $green-color;
+    }
+  }
+}
