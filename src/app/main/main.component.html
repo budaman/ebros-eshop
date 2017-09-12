@@ -1,7 +1,18 @@
 
 <main>
 <div class="main">
-<div class="arrow"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
-<div class="arrow" ><i  class="fa fa-arrow-down" id="arrow-down" aria-hidden="true"></i></div>
+<div class="arrow" ><i class="fa fa-arrow-up" id='down' (click)="arrowPush($event)"  aria-hidden="true"></i></div>
+<div class="photo-box" ><img
+  *ngFor="let ph of currentPhotos" src={{ph.small}}
+  (click)="selected(ph.id)"
+  /></div>
+<div class="arrow" ><i  class="fa fa-arrow-down" id='up' (click)="arrowPush($event)" aria-hidden="true"></i></div>
+</div>
+<div *ngFor="let ph of photos">
+  <div class="main-pic-cont"
+      *ngIf="ph.id===selectedPhoto">
+    <img src={{ph.small}} />
+    <div><i class="fa fa-search" aria-hidden="true"></i></div>
+  </div>
 </div>
 </main>
