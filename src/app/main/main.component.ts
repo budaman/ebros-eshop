@@ -45,15 +45,21 @@ export class MainComponent implements OnInit {
 arrowPush(e:any) {
   this.pagesAtAll = this.photos.length / this.photosPerPage
   this.pagesAtAll = Math.ceil(this.pagesAtAll)
-  if(e.target.id == 'up' && this.currentPage < this.pagesAtAll) {
-    this.currentPage++
+  if(e.target.id == 'up' && this.currentPhotos.length > 1) {
+    this.indexOfFirstPhoto++
+    this.indexOfLastPhoto++
+    this.selectedPhoto++
+    this.currentPhotos = this.photos.slice(this.indexOfFirstPhoto, this.indexOfLastPhoto)
+  return false
   }
-  if(e.target.id =='down' && this.currentPage > 1) {
-    this.currentPage--
+  if(e.target.id =='down' &&  this.currentPhotos[0].id!=1) {
+    this.indexOfFirstPhoto--
+    this.indexOfLastPhoto--
+    this.selectedPhoto--
+    this.currentPhotos = this.photos.slice(this.indexOfFirstPhoto, this.indexOfLastPhoto)
+  return false
   }
-  this.indexOfLastPhoto = this.currentPage * this.photosPerPage
-  this.indexOfFirstPhoto = this.indexOfLastPhoto -  this.photosPerPage
-  this.currentPhotos = this.photos.slice(this.indexOfFirstPhoto, this.indexOfLastPhoto)
+
 }
 
 selected (id:number) {
