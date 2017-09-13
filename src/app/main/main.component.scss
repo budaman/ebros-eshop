@@ -1,5 +1,4 @@
-$box-width: 18vw;
-$b: 7vw;
+
 $black-color: #001011;
 $green-color: #093A3E;
 $grey-color: #7C7C7C;
@@ -17,60 +16,71 @@ main {
   justify-content: center;
   align-items: center;
   .main {
+    width: 10vw;
     box-sizing: border-box;
-    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .photo-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        min-width: 50px;
+          width: 60%;
+        cursor: pointer;
+        margin: 3px 0;
+        border: 1px solid;
+        border-color: $grey-color;
+        filter: contrast(80%);
+      }
+    }
   }
+  .main-pic-cont {
+    margin: 15px;
+    position: relative;
+    cursor: pointer;
+    img {
+      width: 25vw;
+      min-width: 200px;
+    }
+    div {
+      background-color: $grey-color;
+      padding: 5px;
+      position: absolute;
+      z-index: 5;
+      right: 5px;
+      bottom: 10px;
+      i {
+        color: white;
+      }
+    }
+  }
+
 }
 
-.photo-box {
 
-  width: $box-width;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 70%;
-    cursor: pointer;
-    margin: 3px 0;
-    border: 1px solid;
-    border-color: $grey-color;
-  }
+
+.selected {
+filter: grayscale(0%) !important;
 }
 
 .fa {
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #230025;
 }
 
 .arrow {
   display: flex;
   justify-content: center;
-  width: $box-width;
+
   margin: 10px 0;
 }
 
-.main-pic-cont {
-  width: 80%;
-  position: relative;
-  cursor: pointer;
-  img {
-    width: 100%;
-  }
-  div {
-    background-color: $grey-color;
-    padding: 5px;
-    position: absolute;
-    z-index: 5;
-    right: 5px;
-    bottom: 10px;
-    i {
-      color: white;
-    }
-  }
-}
+.div-pic {
 
-.selected {
-  
 }

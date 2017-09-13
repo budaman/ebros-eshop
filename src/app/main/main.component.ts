@@ -43,27 +43,49 @@ export class MainComponent implements OnInit {
   }
 
 arrowPush(e:any) {
+
   this.pagesAtAll = this.photos.length / this.photosPerPage
   this.pagesAtAll = Math.ceil(this.pagesAtAll)
-  if(e.target.id == 'up' && this.currentPhotos.length > 1) {
+  if(e.target.id == 'up') {
+    let first = this.indexOfFirstPhoto
+    let last = this.indexOfLastPhoto
+    first++
+    last++
+    let photos = this.photos.slice(first, last)
+    if(photos.length > 2)
+    {
+
     this.indexOfFirstPhoto++
     this.indexOfLastPhoto++
-    this.selectedPhoto++
     this.currentPhotos = this.photos.slice(this.indexOfFirstPhoto, this.indexOfLastPhoto)
+    console.log(this.indexOfFirstPhoto + ' ' + this.indexOfLastPhoto)
+    }
+    if(this.photos.length > this.selectedPhoto) {
+      this.selectedPhoto++
+    }
   return false
   }
-  if(e.target.id =='down' &&  this.currentPhotos[0].id!=1) {
-    this.indexOfFirstPhoto--
-    this.indexOfLastPhoto--
+  if(e.target.id =='down' &&  this.selectedPhoto!=1) {
     this.selectedPhoto--
-    this.currentPhotos = this.photos.slice(this.indexOfFirstPhoto, this.indexOfLastPhoto)
+    let first = this.indexOfFirstPhoto
+    let last = this.indexOfLastPhoto
+    first--
+    last--
+    let photos = this.photos.slice(first, last)
+    if(photos.length > 2) {
+      this.indexOfFirstPhoto--
+      this.indexOfLastPhoto--
+      this.currentPhotos = this.photos.slice(this.indexOfFirstPhoto, this.indexOfLastPhoto)
+    }
   return false
   }
-
+  e.stopPropagation();
+ return false
 }
 
 selected (id:number) {
   this.selectedPhoto = id
+
 }
 
 
