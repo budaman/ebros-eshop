@@ -37,7 +37,7 @@ main {
         cursor: pointer;
         margin: 3px 0;
         border: 1px solid;
-        border-color: $grey-color;
+        border-color: #e0eafc;
         filter: contrast(80%);
       }
     }
@@ -95,7 +95,7 @@ filter: grayscale(0%) !important;
   left: 0;
   position:fixed;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   z-index: 7;
   background: #e0eafc;
   background: -webkit-linear-gradient(to right, #e0eafc, #cfdef3);
@@ -109,7 +109,8 @@ filter: grayscale(0%) !important;
     cursor: pointer;
   }
   img {
-    width: 40vw;
+    width: 35vw;
+    min-width: 300px;
   }
   button {
     background-color: $price;
