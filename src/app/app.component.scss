@@ -10,14 +10,7 @@ $pink-color: #D84797;
 $white-color: #D2FDFF;
 
 
-.guitar-logo {
-  width:35vw;
-  min-width: 250px;
-  min-height: 100px;
-  height: 13vw;
-  margin: 0;
-  padding: 0;
-}
+
 
 .header {
   color: $white-color;
@@ -25,16 +18,16 @@ $white-color: #D2FDFF;
 
 nav {
   width: 100%;
-  margin-top: 20px;
   padding: 0;
   margin: 0;
+  background-color: $black-color;
   ul{
-    background-color: $black-color;
     display: flex;
     justify-content: space-around;
     padding: 0;
     margin: 0;
     list-style: none;
+    width: 400px;
     li{
       padding: 10px 0;
       a{
@@ -51,4 +44,27 @@ nav {
       background-color: $green-color;
     }
   }
+  div {
+    cursor: pointer;
+    div {
+    color: white;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    font-size: 0.7rem;
+    background-color: $black-color;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  i  {
+    color: white;
+    position: absolute;
+    right: 33px;
+    top: 14px;
+  }
+}
 }

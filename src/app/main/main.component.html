@@ -20,6 +20,6 @@
   <div class="close" (click)="selectedProduct(product)">X</div>
   <h4>{{product.name}} <span class="price"> {{product.price + "$"}}</span></h4>
   <img src={{product.big}}/>
-  <button>Add to Cart</button>
+  <button (click)="addToCart(product)">Add to Cart</button>
 </div>
 </main>

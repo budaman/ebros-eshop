@@ -16,8 +16,7 @@ export class MainComponent implements OnInit {
   currentPhotos:any[]
   selectedPhoto:number
   product:Product
-
-
+  cartList:any[]
   constructor() {
 
    }
@@ -35,7 +34,17 @@ export class MainComponent implements OnInit {
   selectedProduct(product) {
     this.product = product
     this.toggleProduct = !this.toggleProduct
-    console.log(this.toggleProduct)
+  }
+
+  addToCart(product) {
+    if(product==null) {
+      this.cartList = []
+      this.cartList.push(product)
+    } else {
+      this.cartList.push(product)
+      console.log(this.cartList)
+    }
+
   }
 
 arrowPush(e:any) {
