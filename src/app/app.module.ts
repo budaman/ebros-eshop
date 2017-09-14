@@ -22,7 +22,7 @@ import { MainComponent } from './main/main.component';
     HttpModule,
     RouterModule.forRoot([
       {
-      path: 'product',
+      path: 'contacts',
       component: SlidesComponent
     },
     {
