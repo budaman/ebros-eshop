@@ -8,11 +8,18 @@
   /></div>
 <div class="arrow" ><i  class="fa fa-arrow-down" id='up' (click)="arrowPush($event)" aria-hidden="true"></i></div>
 </div>
-<div class="div-pic" *ngFor="let ph of photos">
-  <div class="main-pic-cont"
+<div *ngFor="let ph of photos">
+  <div (click)="selectedProduct(ph)"
+   class="main-pic-cont"
       *ngIf="ph.id===selectedPhoto">
     <img src={{ph.small}} />
     <div><i class="fa fa-search" aria-hidden="true"></i></div>
   </div>
+</div>
+<div class="product" [ngClass]="{'product-display': toggleProduct == true }">
+  <div class="close" (click)="selectedProduct(product)">X</div>
+  <h4>{{product.name}} <span class="price"> {{product.price + "$"}}</span></h4>
+  <img src={{product.big}}/>
+  <button>Add to Cart</button>
 </div>
 </main>
