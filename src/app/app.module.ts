@@ -9,6 +9,11 @@ import { SlidesComponent } from './slides/slides.component';
 import { AboutComponent } from './about/about.component';
 import { MainComponent } from './main/main.component';
 
+//providers
+import { Cart } from './api/cart'
+import { ProductService } from './api/products.service'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +41,7 @@ import { MainComponent } from './main/main.component';
 
     ])
   ],
-  providers: [],
+  providers: [Cart, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
