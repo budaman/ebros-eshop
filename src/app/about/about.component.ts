@@ -9,8 +9,6 @@ import { ActivatedRoute, Params } from '@angular/router'
 export class AboutComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {
-
-    console.log(route.snapshot.params)
   }
 
   ngOnInit() {

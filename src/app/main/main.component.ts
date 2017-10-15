@@ -24,14 +24,13 @@ export class MainComponent implements OnInit {
   currentPhotos:any[]
   selectedPhoto:number
   cartList:any[]
+  loading: boolean = true
 
 
 
   constructor(private productService: ProductService, private cart: Cart) {
 
   }
-
-
   ngOnInit(): void {
     this.productService.getProductsSlowly()
     .then(photos => {
@@ -42,6 +41,7 @@ export class MainComponent implements OnInit {
       this.indexOfLastPhoto = this.currentPage * this.photosPerPage
       this.indexOfFirstPhoto = this.indexOfLastPhoto -  this.photosPerPage
       this.currentPhotos = this.photos.slice(this.indexOfFirstPhoto, this.indexOfLastPhoto)
+      this.loading = false
     }) //kolkas meta erora, nes vyksta promises ir negauna pirmuju masyvu apacioje esantis kodas
   }
 

@@ -1,4 +1,8 @@
+<div *ngIf="loading">
+  loading....
+</div>
 
+<div *ngIf="!loading">
 <main>
 <div class="main">
 <div class="arrow" ><i class="fa fa-arrow-up" id='down' (click)="arrowPush($event)"  aria-hidden="true"></i></div>
@@ -25,3 +29,4 @@
 </div>
 </div>
 </main>
+</div>
